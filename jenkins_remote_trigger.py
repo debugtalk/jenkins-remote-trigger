@@ -39,7 +39,7 @@ def main():
         print("Remote Jenkins job name not specified.")
         exit(1)
 
-    trigger(args)
+    return trigger(args)
 
 def trigger(args):
     """ trigger remote Jenkins to build job.
