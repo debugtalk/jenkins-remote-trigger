@@ -33,6 +33,7 @@ In the former Jenkins job configuration, we can add the following bash scripts t
 
 # then execute the following scripts
 rm -rf jenkins-remote-trigger
+# On Windows: rmdir /Q /S jenkins-remote-trigger
 git clone https://github.com/debugtalk/jenkins-remote-trigger.git
 cd jenkins-remote-trigger
 pip install -r requirements.txt
