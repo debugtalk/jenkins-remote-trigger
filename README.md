@@ -33,7 +33,6 @@ In the former Jenkins job configuration, we can add the following bash scripts t
 
 # then execute the following scripts
 rm -rf jenkins-remote-trigger
-# On Windows: rmdir /Q /S jenkins-remote-trigger
 git clone https://github.com/debugtalk/jenkins-remote-trigger.git
 cd jenkins-remote-trigger
 pip install -r requirements.txt
@@ -43,6 +42,24 @@ python jenkins_remote_trigger.py \
     --password api-passwd \
     --job-name Prj-SmokeTest \
     --mail-recepients ${MAIL_RECEPIENTS}
+```
+
+If you are using Windows platform, use the scripts below instead.
+
+```bash
+# do the work of current job
+
+# then execute the following scripts
+rmdir /Q /S jenkins-remote-trigger
+git clone https://github.com/debugtalk/jenkins-remote-trigger.git
+cd jenkins-remote-trigger
+pip.exe install -r requirements.txt
+python.exe jenkins_remote_trigger.py ^
+    --host http://192.168.0.169:8080 ^
+    --username api-user ^
+    --password api-passwd ^
+    --job-name Prj-SmokeTest ^
+    --mail-recepients %MAIL_RECEPIENTS%
 ```
 
 ## Limitation Notice
